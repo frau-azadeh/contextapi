@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000/api", // آدرس پایه API
-  timeout: 5000, // زمان‌بندی درخواست‌ها
+    baseURL: process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000/api",
+    timeout: 5000, // زمان‌بندی درخواست‌ها
   headers: {
     "Content-Type": "application/json", // نوع محتوای درخواست‌ها
   },
