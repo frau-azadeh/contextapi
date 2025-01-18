@@ -1,0 +1,363 @@
+[
+    {
+      "id": 1,
+      "name": "سعیده پزشکی",
+      "gender": "زن",
+      "specialty": "چشم‌پزشک",
+      "workTime": "شب",
+      "degree": "فوق تخصص",
+      "image": "/assets/doctors/1.webp"
+    },
+    {
+      "id": 2,
+      "name": "امیر جعفری",
+      "gender": "مرد",
+      "specialty": "دندانپزشکی",
+      "workTime": "عصر",
+      "degree": "دکتری",
+      "image": "/assets/doctors/2.webp"
+    },
+    {
+      "id": 3,
+      "name": "لیلا تاجیک",
+      "gender": "زن",
+      "specialty": "کلیه",
+      "workTime": "صبح",
+      "degree": "متخصص",
+      "image": "/assets/doctors/3.webp"
+    },
+    {
+      "id": 4,
+      "name": "علی کلانتری",
+      "gender": "مرد",
+      "specialty": "غدد",
+      "workTime": "شب",
+      "degree": "فوق تخصص",
+      "image": "/assets/doctors/4.webp"
+    },
+    {
+      "id": 5,
+      "name": "آرزو سلیمی",
+      "gender": "زن",
+      "specialty": "دیابت",
+      "workTime": "عصر",
+      "degree": "دکتری",
+      "image": "/assets/doctors/5.webp"
+    },
+    {
+      "id": 6,
+      "name": "بابک غفاری",
+      "gender": "مرد",
+      "specialty": "چشم‌پزشک",
+      "workTime": "صبح",
+      "degree": "متخصص",
+      "image": "/assets/doctors/6.webp"
+    },
+    {
+      "id": 7,
+      "name": "رامش غفاری",
+      "gender": "زن",
+      "specialty": "دندانپزشکی",
+      "workTime": "شب",
+      "degree": "فوق تخصص",
+      "image": "/assets/doctors/7.webp"
+    },
+    {
+      "id": 8,
+      "name": "صابر مددی",
+      "gender": "مرد",
+      "specialty": "کلیه",
+      "workTime": "عصر",
+      "degree": "دکتری",
+      "image": "/assets/doctors/8.webp"
+    },
+    {
+      "id": 9,
+      "name": "شهلا ریاحی",
+      "gender": "زن",
+      "specialty": "غدد",
+      "workTime": "صبح",
+      "degree": "متخصص",
+      "image": "/assets/doctors/9.webp"
+    },
+    {
+      "id": 10,
+      "name": "احمد سعیدی",
+      "gender": "مرد",
+      "specialty": "دیابت",
+      "workTime": "شب",
+      "degree": "فوق تخصص",
+      "image": "/assets/doctors/10.webp"
+    },
+    {
+      "id": 11,
+      "name": "لیلا طاووسی",
+      "gender": "زن",
+      "specialty": "چشم‌پزشک",
+      "workTime": "عصر",
+      "degree": "دکتری",
+      "image": "/assets/doctors/11.webp"
+    },
+    {
+      "id": 12,
+      "name": "سهراب لک",
+      "gender": "مرد",
+      "specialty": "دندانپزشکی",
+      "workTime": "صبح",
+      "degree": "متخصص",
+      "image": "/assets/doctors/12.webp"
+    },
+    {
+      "id": 13,
+      "name": "فاطمه احمدی",
+      "gender": "زن",
+      "specialty": "کلیه",
+      "workTime": "شب",
+      "degree": "فوق تخصص",
+      "image": "/assets/doctors/13.webp"
+    },
+    {
+      "id": 14,
+      "name": "امیر ارجمند",
+      "gender": "مرد",
+      "specialty": "غدد",
+      "workTime": "عصر",
+      "degree": "دکتری",
+      "image": "/assets/doctors/14.webp"
+    },
+    {
+      "id": 15,
+      "name": "لیلا ساکت",
+      "gender": "زن",
+      "specialty": "دیابت",
+      "workTime": "صبح",
+      "degree": "متخصص",
+      "image": "/assets/doctors/15.webp"
+    },
+    {
+      "id": 16,
+      "name": "محمد علی شریفی",
+      "gender": "مرد",
+      "specialty": "چشم‌پزشک",
+      "workTime": "شب",
+      "degree": "فوق تخصص",
+      "image": "/assets/doctors/16.webp"
+    },
+    {
+      "id": 17,
+      "name": "دلارا شریفیان",
+      "gender": "زن",
+      "specialty": "دندانپزشکی",
+      "workTime": "عصر",
+      "degree": "دکتری",
+      "image": "/assets/doctors/17.webp"
+    },
+    {
+      "id": 18,
+      "name": "مجتبی نیلفروشان",
+      "gender": "مرد",
+      "specialty": "کلیه",
+      "workTime": "صبح",
+      "degree": "متخصص",
+      "image": "/assets/doctors/18.webp"
+    },
+    {
+      "id": 19,
+      "name": "مریم سالاری",
+      "gender": "زن",
+      "specialty": "غدد",
+      "workTime": "شب",
+      "degree": "فوق تخصص",
+      "image": "/assets/doctors/19.webp"
+    },
+    {
+      "id": 20,
+      "name": "سیروس امامی",
+      "gender": "مرد",
+      "specialty": "دیابت",
+      "workTime": "عصر",
+      "degree": "دکتری",
+      "image": "/assets/doctors/20.webp"
+    },
+    {
+      "id": 21,
+      "name": "آیناز معدنچی",
+      "gender": "زن",
+      "specialty": "چشم‌پزشک",
+      "workTime": "صبح",
+      "degree": "متخصص",
+      "image": "/assets/doctors/21.webp"
+    },
+    {
+      "id": 22,
+      "name": "ابراهیم خلیلی",
+      "gender": "مرد",
+      "specialty": "دندانپزشکی",
+      "workTime": "شب",
+      "degree": "فوق تخصص",
+      "image": "/assets/doctors/22.webp"
+    },
+    {
+      "id": 23,
+      "name": "ژاله سامی",
+      "gender": "زن",
+      "specialty": "کلیه",
+      "workTime": "عصر",
+      "degree": "دکتری",
+      "image": "/assets/doctors/23.webp"
+    },
+    {
+      "id": 24,
+      "name": "زهرا ابراهیمی",
+      "gender": "مرد",
+      "specialty": "غدد",
+      "workTime": "صبح",
+      "degree": "متخصص",
+      "image": "/assets/doctors/24.webp"
+    },
+    {
+      "id": 25,
+      "name": "آبلار فرزین",
+      "gender": "زن",
+      "specialty": "دیابت",
+      "workTime": "شب",
+      "degree": "فوق تخصص",
+      "image": "/assets/doctors/25.webp"
+    },
+    {
+      "id": 26,
+      "name": "هوتن شکیب",
+      "gender": "مرد",
+      "specialty": "چشم‌پزشک",
+      "workTime": "عصر",
+      "degree": "دکتری",
+      "image": "/assets/doctors/26.webp"
+    },
+    {
+      "id": 27,
+      "name": "گلاره عباسی",
+      "gender": "زن",
+      "specialty": "دندانپزشکی",
+      "workTime": "صبح",
+      "degree": "متخصص",
+      "image": "/assets/doctors/27.webp"
+    },
+    {
+      "id": 28,
+      "name": "امیر خسروی",
+      "gender": "مرد",
+      "specialty": "کلیه",
+      "workTime": "شب",
+      "degree": "فوق تخصص",
+      "image": "/assets/doctors/28.webp"
+    },
+    {
+      "id": 29,
+      "name": "ناهید پور جم",
+      "gender": "زن",
+      "specialty": "غدد",
+      "workTime": "عصر",
+      "degree": "دکتری",
+      "image": "/assets/doctors/29.webp"
+    },
+    {
+      "id": 30,
+      "name": "سالار وطن خواه",
+      "gender": "مرد",
+      "specialty": "دیابت",
+      "workTime": "صبح",
+      "degree": "متخصص",
+      "image": "/assets/doctors/30.webp"
+    },
+    {
+      "id": 31,
+      "name": "ساره ایلخانی",
+      "gender": "زن",
+      "specialty": "چشم‌پزشک",
+      "workTime": "شب",
+      "degree": "فوق تخصص",
+      "image": "/assets/doctors/31.webp"
+    },
+    {
+      "id": 32,
+      "name": "ایرج تقوی",
+      "gender": "مرد",
+      "specialty": "دندانپزشکی",
+      "workTime": "عصر",
+      "degree": "دکتری",
+      "image": "/assets/doctors/32.webp"
+    },
+    {
+      "id": 33,
+      "name": "لاله سلطانی",
+      "gender": "زن",
+      "specialty": "کلیه",
+      "workTime": "صبح",
+      "degree": "متخصص",
+      "image": "/assets/doctors/33.webp"
+    },
+    {
+      "id": 34,
+      "name": "امبر قاسمی",
+      "gender": "مرد",
+      "specialty": "غدد",
+      "workTime": "شب",
+      "degree": "فوق تخصص",
+      "image": "/assets/doctors/34.webp"
+    },
+    {
+      "id": 35,
+      "name": "مژگان مشایخ",
+      "gender": "زن",
+      "specialty": "دیابت",
+      "workTime": "عصر",
+      "degree": "دکتری",
+      "image": "/assets/doctors/35.webp"
+    },
+    {
+      "id": 36,
+      "name": "محمد جواد خیرخواه",
+      "gender": "مرد",
+      "specialty": "چشم‌پزشک",
+      "workTime": "صبح",
+      "degree": "متخصص",
+      "image": "/assets/doctors/36.webp"
+    },
+    {
+      "id": 37,
+      "name": "آفرین کاردان",
+      "gender": "زن",
+      "specialty": "دندانپزشکی",
+      "workTime": "شب",
+      "degree": "فوق تخصص",
+      "image": "/assets/doctors/37.webp"
+    },
+    {
+      "id": 38,
+      "name": "حمید عباسی",
+      "gender": "مرد",
+      "specialty": "کلیه",
+      "workTime": "عصر",
+      "degree": "دکتری",
+      "image": "/assets/doctors/38.webp"
+    },
+    {
+      "id": 39,
+      "name": "شهناز بادامی",
+      "gender": "زن",
+      "specialty": "غدد",
+      "workTime": "صبح",
+      "degree": "متخصص",
+      "image": "/assets/doctors/39.webp"
+    },
+    {
+      "id": 40,
+      "name": "قربان علی سعیدی",
+      "gender": "مرد",
+      "specialty": "دیابت",
+      "workTime": "شب",
+      "degree": "فوق تخصص",
+      "image": "/assets/doctors/40.webp"
+    }
+  ]
+  
