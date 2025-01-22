@@ -1,22 +1,33 @@
-"use client"
-import React, { createContext, useContext, useState, ReactNode } from "react";
+"use client";
 
-// تایپ برای Context
+import React, { createContext, useContext, useState, ReactNode, useEffect } from "react";
+
 type ThemeContextType = {
-  theme: "light" | "dark"; // حالت تم
-  toggleTheme: () => void; // متد تغییر تم
+  theme: "light" | "dark";
+  toggleTheme: () => void;
 };
 
-// تعریف مقدار اولیه Context
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-// تعریف Provider
 export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme") as "light" | "dark";
+    if (storedTheme) {
+      setTheme(storedTheme);
+    }
+  }, []);
+
   const toggleTheme = () => {
-    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
   };
+
+  useEffect(() => {
+    document.documentElement.className = theme;
+  }, [theme]);
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
@@ -25,7 +36,6 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   );
 };
 
-// تعریف یک هوک برای دسترسی به Context
 export const useTheme = () => {
   const context = useContext(ThemeContext);
   if (!context) {
