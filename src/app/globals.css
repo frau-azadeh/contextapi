@@ -25,3 +25,11 @@ body {
     text-wrap: balance;
   }
 }
+
+.light {
+  @apply bg-gray-100 text-black;
+}
+
+.dark {
+  @apply bg-gray-900 text-white;
+}
