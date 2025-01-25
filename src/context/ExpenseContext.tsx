@@ -69,7 +69,7 @@ export const ExpenseProvider: React.FC<{ children: ReactNode }> = ({ children })
 
   
   return (
-    <ExpenseContext.Provider value={{ expenses, addExpense, removeExpense,updateExpense }}>
+    <ExpenseContext.Provider value={{ expenses, addExpense, removeExpense, updateExpense }}>
       {children}
     </ExpenseContext.Provider>
   );
