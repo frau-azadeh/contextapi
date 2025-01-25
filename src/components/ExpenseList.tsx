@@ -4,7 +4,7 @@ import React from "react";
 import { useExpenses } from "@/context/ExpenseContext";
 
 const ExpenseList: React.FC = () => {
-  const { expenses } = useExpenses();
+  const { expenses,removeExpense } = useExpenses();
 
   return (
     <div className="max-w-md mx-auto mt-6">
@@ -18,6 +18,12 @@ const ExpenseList: React.FC = () => {
               <h3 className="text-lg font-bold">{expense.title}</h3>
               <p>Amount: ${expense.amount}</p>
               <p>Date: {expense.date}</p>
+              <button
+                  onClick={() => removeExpense(expense.id)}
+                  className="text-red-500 hover:text-red-700 transition"
+                >
+                  Remove
+                </button>
             </li>
           ))}
         </ul>
