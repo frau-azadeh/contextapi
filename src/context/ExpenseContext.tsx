@@ -53,8 +53,13 @@ export const ExpenseProvider: React.FC<{ children: ReactNode }> = ({ children })
   };
 
   const removeExpense = (id: number) => {
-    setExpenses((prev) => prev.filter((expense) => expense.id !== id));
+    setExpenses((prev) => {
+      const updatedExpenses = prev.filter((expense) => expense.id !== id);
+      localStorage.setItem("expenses", JSON.stringify(updatedExpenses)); // ذخیره داده‌ها در localStorage
+      return updatedExpenses;
+    });
   };
+  
   
   return (
     <ExpenseContext.Provider value={{ expenses, addExpense, removeExpense }}>
