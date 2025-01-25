@@ -1,7 +1,8 @@
 "use client";
 
-import React, { createContext, useContext, useState, ReactNode, useEffect } from "react";
+import { createContext, ReactNode, useContext, useEffect, useState } from "react";
 
+// تعریف نوع داده‌ها
 type Expense = {
   id: number;
   title: string;
@@ -14,25 +15,40 @@ type ExpenseContextType = {
   addExpense: (expense: Omit<Expense, "id">) => void;
 };
 
+// ایجاد Context
 const ExpenseContext = createContext<ExpenseContextType | undefined>(undefined);
 
+// Provider برای مدیریت Context
 export const ExpenseProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  // مقداردهی اولیه با استفاده از LocalStorage
-  const [expenses, setExpenses] = useState<Expense[]>(() => {
-    const storedExpenses = localStorage.getItem("expenses");
-    return storedExpenses ? JSON.parse(storedExpenses) : [];
-  });
+  // state برای نگهداری هزینه‌ها
+  const [expenses, setExpenses] = useState<Expense[]>([]);
 
-  // ذخیره داده‌ها در LocalStorage هنگام تغییر
+  // بارگذاری داده‌ها از LocalStorage
   useEffect(() => {
-    console.log("Saving to LocalStorage:", expenses);
-    localStorage.setItem("expenses", JSON.stringify(expenses));
+    if (typeof window !== "undefined") {
+      const storedExpenses = localStorage.getItem("expenses");
+      if (storedExpenses) {
+        try {
+          setExpenses(JSON.parse(storedExpenses)); // تبدیل رشته به آرایه
+        } catch (error) {
+          console.error("Error parsing LocalStorage data:", error);
+          setExpenses([]);
+        }
+      }
+    }
+  }, []);
+
+  // ذخیره داده‌ها در LocalStorage
+  useEffect(() => {
+    if (typeof window !== "undefined" && expenses.length > 0) {
+      localStorage.setItem("expenses", JSON.stringify(expenses));
+    }
   }, [expenses]);
 
-  // تابع اضافه کردن هزینه جدید
+  // اضافه کردن هزینه جدید
   const addExpense = (expense: Omit<Expense, "id">) => {
     const newExpense = { ...expense, id: Date.now() };
-    setExpenses((prev) => [...prev, newExpense]);
+    setExpenses((prev) => [...prev, newExpense]); // اضافه کردن به آرایه
   };
 
   return (
@@ -42,6 +58,7 @@ export const ExpenseProvider: React.FC<{ children: ReactNode }> = ({ children })
   );
 };
 
+// هوک برای دسترسی به Context
 export const useExpenses = () => {
   const context = useContext(ExpenseContext);
   if (!context) {
