@@ -13,6 +13,7 @@ type Expense = {
 type ExpenseContextType = {
   expenses: Expense[];
   addExpense: (expense: Omit<Expense, "id">) => void;
+  removeExpense: (id: number) =>void;
 };
 
 // ایجاد Context
@@ -51,8 +52,12 @@ export const ExpenseProvider: React.FC<{ children: ReactNode }> = ({ children })
     setExpenses((prev) => [...prev, newExpense]); // اضافه کردن به آرایه
   };
 
+  const removeExpense = (id: number) => {
+    setExpenses((prev) => prev.filter((expense) => expense.id !== id));
+  };
+  
   return (
-    <ExpenseContext.Provider value={{ expenses, addExpense }}>
+    <ExpenseContext.Provider value={{ expenses, addExpense, removeExpense }}>
       {children}
     </ExpenseContext.Provider>
   );
