@@ -1,8 +1,6 @@
 "use client";
-
 import { createContext, ReactNode, useContext, useEffect, useState } from "react";
 
-// تعریف نوع داده‌ها
 type Expense = {
   id: number;
   title: string;
@@ -13,61 +11,62 @@ type Expense = {
 type ExpenseContextType = {
   expenses: Expense[];
   addExpense: (expense: Omit<Expense, "id">) => void;
-  removeExpense: (id: number) =>void;
-  updateExpense: (id: number, updatedData: Partial<Expense>) => void;
+  removeExpense: (id: number) => void;
+  updateExpense: (id: number, updatedExpense: Partial<Expense>) => void;
 };
 
-// ایجاد Context
 const ExpenseContext = createContext<ExpenseContextType | undefined>(undefined);
-
-// Provider برای مدیریت Context
 export const ExpenseProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  // state برای نگهداری هزینه‌ها
   const [expenses, setExpenses] = useState<Expense[]>([]);
 
-  // بارگذاری داده‌ها از LocalStorage
+  // Load data from localStorage on initial render
   useEffect(() => {
     if (typeof window !== "undefined") {
       const storedExpenses = localStorage.getItem("expenses");
       if (storedExpenses) {
         try {
-          setExpenses(JSON.parse(storedExpenses)); // تبدیل رشته به آرایه
+          setExpenses(JSON.parse(storedExpenses));
         } catch (error) {
-          console.error("Error parsing LocalStorage data:", error);
+          console.error("Error parsing localStorage data", error);
           setExpenses([]);
         }
       }
     }
   }, []);
 
-  // ذخیره داده‌ها در LocalStorage
+  // Save data to localStorage when expenses change
   useEffect(() => {
     if (typeof window !== "undefined" && expenses.length > 0) {
       localStorage.setItem("expenses", JSON.stringify(expenses));
     }
   }, [expenses]);
 
-  // اضافه کردن هزینه جدید
+  // Add a new expense
   const addExpense = (expense: Omit<Expense, "id">) => {
     const newExpense = { ...expense, id: Date.now() };
-    setExpenses((prev) => [...prev, newExpense]); // اضافه کردن به آرایه
+    setExpenses((prev) => [...prev, newExpense]);
   };
 
+  // Remove an expense
   const removeExpense = (id: number) => {
     setExpenses((prev) => {
       const updatedExpenses = prev.filter((expense) => expense.id !== id);
-      localStorage.setItem("expenses", JSON.stringify(updatedExpenses)); // ذخیره داده‌ها در localStorage
+      localStorage.setItem("expenses", JSON.stringify(updatedExpenses));
       return updatedExpenses;
     });
   };
-  
-  const updateExpense = (id: number, updatedData: Partial<Expense>) => {
-    setExpenses((prev) =>
-      prev.map((expense) => (expense.id === id ? { ...expense, ...updatedData } : expense))
-    );
+
+  // Update an existing expense
+  const updateExpense = (id: number, updatedExpense: Partial<Expense>) => {
+    setExpenses((prev) => {
+      const updatedExpenses = prev.map((expense) =>
+        expense.id === id ? { ...expense, ...updatedExpense } : expense
+      );
+      localStorage.setItem("expenses", JSON.stringify(updatedExpenses));
+      return updatedExpenses;
+    });
   };
 
-  
   return (
     <ExpenseContext.Provider value={{ expenses, addExpense, removeExpense, updateExpense }}>
       {children}
@@ -75,7 +74,6 @@ export const ExpenseProvider: React.FC<{ children: ReactNode }> = ({ children })
   );
 };
 
-// هوک برای دسترسی به Context
 export const useExpenses = () => {
   const context = useContext(ExpenseContext);
   if (!context) {

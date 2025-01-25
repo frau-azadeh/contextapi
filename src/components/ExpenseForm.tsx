@@ -1,22 +1,41 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useExpenses } from "@/context/ExpenseContext";
 
 type FormData = {
+  id?: number;
   title: string;
   amount: number;
   date: string;
 };
 
-const ExpenseForm: React.FC = () => {
-  const { register, handleSubmit, reset } = useForm<FormData>();
-  const { addExpense } = useExpenses();
+const ExpenseForm: React.FC<{
+  editingExpense: FormData | null;
+  setEditingExpense: (expense: FormData | null) => void;
+}> = ({ editingExpense, setEditingExpense }) => {
+  const { register, handleSubmit, reset, setValue } = useForm<FormData>();
+  const { addExpense, updateExpense } = useExpenses();
+
+  useEffect(() => {
+    if (editingExpense) {
+      setValue("title", editingExpense.title);
+      setValue("amount", editingExpense.amount);
+      setValue("date", editingExpense.date);
+    } else {
+      reset();
+    }
+  }, [editingExpense, setValue, reset]);
 
   const onSubmit = (data: FormData) => {
-    addExpense(data);
-    reset(); // فرم را پس از ارسال پاک می‌کند
+    if (editingExpense) {
+      updateExpense(editingExpense.id!, data);
+      setEditingExpense(null);
+    } else {
+      addExpense(data);
+    }
+    reset();
   };
 
   return (
@@ -39,7 +58,7 @@ const ExpenseForm: React.FC = () => {
         className="p-2 border rounded"
       />
       <button type="submit" className="bg-blue-500 text-white p-2 rounded">
-        Add Expense
+        {editingExpense ? "Update Expense" : "Add Expense"}
       </button>
     </form>
   );
