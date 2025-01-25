@@ -3,32 +3,44 @@
 import React from "react";
 import { useExpenses } from "@/context/ExpenseContext";
 
-const ExpenseList: React.FC = () => {
-  const { expenses,removeExpense } = useExpenses();
+type FormData = {
+  id?: number;
+  title: string;
+  amount: number;
+  date: string;
+};
+
+const ExpenseList: React.FC<{
+  setEditingExpense: (expense: FormData | null) => void;
+}> = ({ setEditingExpense }) => {
+  const { expenses, removeExpense } = useExpenses();
 
   return (
-    <div className="max-w-md mx-auto mt-6">
-      <h2 className="text-2xl font-bold mb-4">Expenses</h2>
-      {expenses.length === 0 ? (
-        <p>No expenses added yet.</p>
-      ) : (
-        <ul className="space-y-4">
-          {expenses.map((expense) => (
-            <li key={expense.id} className="p-4 border rounded">
-              <h3 className="text-lg font-bold">{expense.title}</h3>
-              <p>Amount: ${expense.amount}</p>
-              <p>Date: {expense.date}</p>
-              <button
-                  onClick={() => removeExpense(expense.id)}
-                  className="text-red-500 hover:text-red-700 transition"
-                >
-                  Remove
-                </button>
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
+    <ul className="max-w-md mx-auto mt-4">
+      {expenses.map((expense) => (
+        <li key={expense.id} className="flex justify-between items-center p-2 border rounded mb-2">
+          <div>
+            <h3 className="text-lg font-bold">{expense.title}</h3>
+            <p>${expense.amount}</p>
+            <p>{expense.date}</p>
+          </div>
+          <div className="flex gap-2">
+            <button
+              onClick={() => setEditingExpense(expense)}
+              className="bg-yellow-500 text-white p-2 rounded"
+            >
+              Edit
+            </button>
+            <button
+              onClick={() => removeExpense(expense.id!)}
+              className="bg-red-500 text-white p-2 rounded"
+            >
+              Delete
+            </button>
+          </div>
+        </li>
+      ))}
+    </ul>
   );
 };
 
