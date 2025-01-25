@@ -14,6 +14,7 @@ type ExpenseContextType = {
   expenses: Expense[];
   addExpense: (expense: Omit<Expense, "id">) => void;
   removeExpense: (id: number) =>void;
+  updateExpense: (id: number, updatedData: Partial<Expense>) => void;
 };
 
 // ایجاد Context
@@ -60,9 +61,15 @@ export const ExpenseProvider: React.FC<{ children: ReactNode }> = ({ children })
     });
   };
   
+  const updateExpense = (id: number, updatedData: Partial<Expense>) => {
+    setExpenses((prev) =>
+      prev.map((expense) => (expense.id === id ? { ...expense, ...updatedData } : expense))
+    );
+  };
+
   
   return (
-    <ExpenseContext.Provider value={{ expenses, addExpense, removeExpense }}>
+    <ExpenseContext.Provider value={{ expenses, addExpense, removeExpense,updateExpense }}>
       {children}
     </ExpenseContext.Provider>
   );
