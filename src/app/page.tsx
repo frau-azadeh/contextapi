@@ -7,6 +7,7 @@ import  ExpenseForm  from "@/components/ExpenseForm";
 import  ExpenseList  from "@/components/ExpenseList";
 import  ExpenseSearch  from "@/components/ExpenseSearch";
 import ExpenseChart from "@/components/ExpenseChart";
+import ExpenseSummary from "@/components/ExpenseSummary";
 
 type FormData = {
   id?: number;
@@ -25,6 +26,7 @@ const HomePage: React.FC = () => {
         <h1 className="text-4xl font-bold mb-6">Welcome to Costly</h1>
         <ThemeSwitcher />
         <ExpenseSearch />
+        <ExpenseSummary/>
         <ExpenseChart/>
         <ExpenseForm
           editingExpense={editingExpense}
