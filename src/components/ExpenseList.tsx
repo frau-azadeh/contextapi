@@ -13,12 +13,20 @@ type FormData = {
 const ExpenseList: React.FC<{
   setEditingExpense: (expense: FormData | null) => void;
 }> = ({ setEditingExpense }) => {
-  const { expenses, removeExpense } = useExpenses();
+  const { expenses, removeExpense, searchQuery } = useExpenses();
+
+  // فیلتر کردن هزینه‌ها بر اساس مقدار جستجو
+  const filteredExpenses = expenses.filter((expense) =>
+    expense.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <ul className="max-w-md mx-auto mt-4">
-      {expenses.map((expense) => (
-        <li key={expense.id} className="flex justify-between items-center p-2 border rounded mb-2">
+      {filteredExpenses.map((expense) => (
+        <li
+          key={expense.id}
+          className="flex justify-between items-center p-2 border rounded mb-2"
+        >
           <div>
             <h3 className="text-lg font-bold">{expense.title}</h3>
             <p>${expense.amount}</p>
