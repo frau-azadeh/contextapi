@@ -9,6 +9,7 @@ type FormData = {
   title: string;
   amount: number;
   date: string;
+  category: string;
 };
 
 const ExpenseForm: React.FC<{
@@ -23,6 +24,7 @@ const ExpenseForm: React.FC<{
       setValue("title", editingExpense.title);
       setValue("amount", editingExpense.amount);
       setValue("date", editingExpense.date);
+      setValue("category", editingExpense.category);
     } else {
       reset();
     }
@@ -57,6 +59,13 @@ const ExpenseForm: React.FC<{
         type="date"
         className="p-2 border rounded"
       />
+      <select {...register("category", { required: true })} className="p-2 border rounded">
+        <option value="">Select Category</option>
+        <option value="Food">Food</option>
+        <option value="Transportation">Transportation</option>
+        <option value="Entertainment">Entertainment</option>
+        <option value="Other">Other</option>
+      </select>
       <button type="submit" className="bg-blue-500 text-white p-2 rounded">
         {editingExpense ? "Update Expense" : "Add Expense"}
       </button>
