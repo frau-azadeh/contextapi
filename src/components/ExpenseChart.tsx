@@ -52,7 +52,7 @@ const ExpenseChart: React.FC = () => {
   };
 
   return (
-    <div className="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-md">
+    <div className="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-md m-2">
       <Bar data={data} options={options} />
     </div>
   );
