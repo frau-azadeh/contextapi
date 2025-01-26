@@ -6,6 +6,7 @@ import  ThemeSwitcher  from "@/components/ThemeSwitcher";
 import  ExpenseForm  from "@/components/ExpenseForm";
 import  ExpenseList  from "@/components/ExpenseList";
 import  ExpenseSearch  from "@/components/ExpenseSearch";
+import ExpenseChart from "@/components/ExpenseChart";
 
 type FormData = {
   id?: number;
@@ -24,6 +25,7 @@ const HomePage: React.FC = () => {
         <h1 className="text-4xl font-bold mb-6">Welcome to Costly</h1>
         <ThemeSwitcher />
         <ExpenseSearch />
+        <ExpenseChart/>
         <ExpenseForm
           editingExpense={editingExpense}
           setEditingExpense={setEditingExpense}
