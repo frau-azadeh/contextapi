@@ -73,9 +73,6 @@ Costly is a modern expense tracking application designed to help you manage your
 
         Switch between light mode and dark mode using the toggle button in the top-right corner.
 
-##  🌐 Deployment
-
-The project is live on Vercel. Visit it here:[Vercel View](https://contextapi-sigma-taupe.vercel.app/)
 
 ##   🙌 Contributing
 
