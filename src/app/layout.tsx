@@ -9,9 +9,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <html lang="en">
       <body className="min-h-screen">
         <ThemeProvider>
-          <ExpenseProvider>
-            {children}
-          </ExpenseProvider>
+          <ExpenseProvider>{children}</ExpenseProvider>
         </ThemeProvider>
       </body>
     </html>

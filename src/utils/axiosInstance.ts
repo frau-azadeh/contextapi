@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-    baseURL: process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000/api",
-    timeout: 5000, // زمان‌بندی درخواست‌ها
+  baseURL: process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000/api",
+  timeout: 5000, // زمان‌بندی درخواست‌ها
   headers: {
     "Content-Type": "application/json", // نوع محتوای درخواست‌ها
   },
@@ -16,7 +16,7 @@ axiosInstance.interceptors.request.use(
   },
   (error) => {
     return Promise.reject(error);
-  }
+  },
 );
 
 // Interceptor برای مدیریت پاسخ‌ها
@@ -27,7 +27,7 @@ axiosInstance.interceptors.response.use(
   (error) => {
     console.error("API Error:", error);
     return Promise.reject(error);
-  }
+  },
 );
 
 export default axiosInstance;

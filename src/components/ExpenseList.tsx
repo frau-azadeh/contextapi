@@ -14,14 +14,22 @@ type FormData = {
 const ExpenseList: React.FC<{
   setEditingExpense: (expense: FormData | null) => void;
 }> = ({ setEditingExpense }) => {
-  const { expenses, removeExpense, searchQuery, filterCategory, setFilterCategory } = useExpenses();
+  const {
+    expenses,
+    removeExpense,
+    searchQuery,
+    filterCategory,
+    setFilterCategory,
+  } = useExpenses();
 
   // فیلتر کردن هزینه‌ها بر اساس مقدار جستجو و دسته‌بندی
   const filteredExpenses = expenses
     .filter((expense) =>
-      expense.title.toLowerCase().includes(searchQuery.toLowerCase())
+      expense.title.toLowerCase().includes(searchQuery.toLowerCase()),
     ) // فیلتر جستجو
-    .filter((expense) => (filterCategory ? expense.category === filterCategory : true)); // فیلتر دسته‌بندی
+    .filter((expense) =>
+      filterCategory ? expense.category === filterCategory : true,
+    ); // فیلتر دسته‌بندی
 
   return (
     <div className="max-w-md mx-auto mt-4">
@@ -49,7 +57,9 @@ const ExpenseList: React.FC<{
               <h3 className="text-lg font-bold">{expense.title}</h3>
               <p>${expense.amount}</p>
               <p>{expense.date}</p>
-              <p className="italic text-sm text-gray-500">Category: {expense.category}</p>
+              <p className="italic text-sm text-gray-500">
+                Category: {expense.category}
+              </p>
             </div>
             <div className="flex gap-2">
               <button

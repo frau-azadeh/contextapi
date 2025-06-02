@@ -5,6 +5,7 @@ Costly is a modern expense tracking application designed to help you manage your
 ---
 
 ## 🚀 Features
+
 - Add, edit, and delete expenses with ease.
 
 - Categorize expenses (Food, Transportation, Entertainment, etc.).
@@ -18,7 +19,9 @@ Costly is a modern expense tracking application designed to help you manage your
 - Form management with **React Hook Form**.
 
 ---
+
 ## 🛠️ Tech Stack
+
 - **Next.js (v14)**: Framework for React applications with modern routing and rendering capabilities.
 
 - **Context API**: State management for expenses and theme.
@@ -44,7 +47,7 @@ Costly is a modern expense tracking application designed to help you manage your
 ### Installation
 
     1. Clone the repository:
-  
+
         git clone https://github.com/frau-azadeh/Context-api.git
 
     2. Navigate to the project directory:
@@ -63,7 +66,7 @@ Costly is a modern expense tracking application designed to help you manage your
 
         http://localhost:3000
 
-##  🎯 Usage
+## 🎯 Usage
 
         Use the Expense Form to add new expenses with title, amount, and category.
 
@@ -73,11 +76,8 @@ Costly is a modern expense tracking application designed to help you manage your
 
         Switch between light mode and dark mode using the toggle button in the top-right corner.
 
-
-##   🙌 Contributing
+## 🙌 Contributing
 
 🌻 Azadeh Sharifi Soltani
 
 Feel free to contribute to this project by submitting a pull request or opening an issue! Made with 💻, ☕, and 🌻 by Azadeh Sharifi Soltani
-    
-
