@@ -41,7 +41,10 @@ const ExpenseForm: React.FC<{
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 max-w-md mx-auto">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="flex flex-col gap-4 max-w-md mx-auto"
+    >
       <input
         {...register("title", { required: true })}
         placeholder="Title"
@@ -59,7 +62,10 @@ const ExpenseForm: React.FC<{
         type="date"
         className="p-2 border rounded"
       />
-      <select {...register("category", { required: true })} className="p-2 border rounded">
+      <select
+        {...register("category", { required: true })}
+        className="p-2 border rounded"
+      >
         <option value="">Select Category</option>
         <option value="Food">Food</option>
         <option value="Transportation">Transportation</option>

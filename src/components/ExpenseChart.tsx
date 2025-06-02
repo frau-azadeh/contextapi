@@ -14,17 +14,26 @@ import {
 } from "chart.js";
 
 // ثبت پلاگین‌های Chart.js
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+);
 
 const ExpenseChart: React.FC = () => {
   const { expenses } = useExpenses();
 
   // آماده‌سازی داده‌ها برای چارت
-  const categories = Array.from(new Set(expenses.map((expense) => expense.category))); // استخراج دسته‌بندی‌ها
+  const categories = Array.from(
+    new Set(expenses.map((expense) => expense.category)),
+  ); // استخراج دسته‌بندی‌ها
   const dataByCategory = categories.map((category) =>
     expenses
       .filter((expense) => expense.category === category)
-      .reduce((sum, expense) => sum + expense.amount, 0)
+      .reduce((sum, expense) => sum + expense.amount, 0),
   );
 
   const data = {
