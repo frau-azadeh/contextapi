@@ -1,17 +1,19 @@
 "use client";
 
 import React from "react";
-import { useExpenses } from "@/context/ExpenseContext";
-import { Bar } from "react-chartjs-2";
+
 import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
   BarElement,
+  CategoryScale,
+  Chart as ChartJS,
+  Legend,
+  LinearScale,
   Title,
   Tooltip,
-  Legend,
 } from "chart.js";
+import { Bar } from "react-chartjs-2";
+
+import { useExpenses } from "@/context/ExpenseContext";
 
 // ثبت پلاگین‌های Chart.js
 ChartJS.register(

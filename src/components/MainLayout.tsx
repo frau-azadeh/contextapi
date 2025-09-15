@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+
 import { useTheme } from "@/context/ThemeContext";
 
 const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {

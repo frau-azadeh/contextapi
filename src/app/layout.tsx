@@ -1,8 +1,10 @@
 "use client";
 
 import { ExpenseProvider } from "@/context/ExpenseContext";
-import "./globals.css"; // استایل‌های عمومی
+// استایل‌های عمومی
 import { ThemeProvider } from "@/context/ThemeContext";
+
+import "./globals.css";
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
